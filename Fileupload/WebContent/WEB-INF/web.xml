@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>Fileupload</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- Context Root 경로 -->
+	<context-param>
+		<param-name>rootPath</param-name>
+		<param-value>/Fileupload</param-value>
+	</context-param>
+	
+	<!-- 처리 도중 저장해놓을 임시 파일 저장 경로 -->
+	<context-param>
+		<param-name>tempdir</param-name>
+		<param-value>C:\temp</param-value>
+	</context-param>
+	
+	<!-- Image 업로드 처리 서블릿 -->
+	
+	<servlet>
+		<servlet-name>ImageUploadServlet</servlet-name>
+		<servlet-class>file.upload.servlet.ImageUploadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImageUploadServlet</servlet-name>
+		<url-pattern>/imageupload</url-pattern>
+	</servlet-mapping>
+</web-app>
