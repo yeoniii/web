@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>helloweb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- servlet 태그 : 서블릿 객체를 등록하는 태그 -->
+  <!-- HelloServlet 객체 등록 -->
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>hello.HelloServlet</servlet-class>
+  </servlet>
+  <!-- 등록한 HelloServlet을 요청하는 URL 등록 -->
+  <!-- 사용자(Web Browser)가 /hello URL로 요청하면 이름이 hello인 서블릿 객체가 일한다. -->
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern> <!-- /로 시작, - Application Root 경로 -->
+		<!-- http://127.0.0.1:8088/helloweb/hello -->
+	</servlet-mapping>
+</web-app>
